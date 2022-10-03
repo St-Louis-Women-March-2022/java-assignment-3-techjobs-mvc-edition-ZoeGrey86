@@ -59,6 +59,11 @@ public class ListController {
             model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
         }
         model.addAttribute("jobs", jobs);
+        model.addAttribute("employers", JobData.getAllEmployers());
+        model.addAttribute("locations", JobData.getAllLocations());
+        model.addAttribute("positions", JobData.getAllPositionTypes());
+        model.addAttribute("skills", JobData.getAllCoreCompetency());
+
 
         return "list-jobs";
     }
